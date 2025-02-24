@@ -1,0 +1,113 @@
+option {
+  color: black !important;
+  background: white !important;
+}
+
+option,
+select {
+  cursor: pointer;
+}
+
+form.action {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form.action,
+.actions {
+  gap: 5px;
+}
+
+.commentContainer {
+  display: none;
+  z-index: 20;
+  background: #f9f9f9;
+  border: 2px solid #dcdcdc;
+  border-radius: 3px;
+  box-shadow: -10px 10px 10px #00000024;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 90%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions a,
+.actions button,
+.send {
+  color: white;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 3px;
+  width: 100%;
+  text-align: center;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions .update {
+  background: #17c317;
+}
+
+.actions .delete {
+  color: white;
+  background: #db4747;
+}
+
+.actions .update:hover {
+  background: #008000;
+}
+
+.actions .delete:hover {
+  background: #b93939;
+}
+
+.actions .comment {
+  background: #007bff;
+}
+
+.actions .comment:hover {
+  background: #0a66c8;
+}
+
+td:has(.commentContainer) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.commentContainer form {
+  display: flex;
+  flex-direction: row;
+}
+
+.send,
+.commentContainer input {
+  border-radius: 3px;
+}
+
+
+.commentContainer input {
+  border: 1px solid #dcdcdc;
+  outline: none;
+  padding: 3px 10px;
+}
+
+.commentContainer input:focus {
+  border-color: #303030;
+}
+
+.send {
+  padding: 10px;
+  font-size: 14px;
+  background: #392c70;
+}
