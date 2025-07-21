@@ -14,9 +14,9 @@ if (isset($_POST['submit'])) {
 
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
-  $pass = sha1($_POST['pass']);
+  $pass = $_POST['pass'];
   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-  $cpass = sha1($_POST['cpass']);
+  $cpass = $_POST['cpass'];
   $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
   $select_admin = $conn->prepare("SELECT * FROM `admins` WHERE name = ?");
@@ -28,8 +28,9 @@ if (isset($_POST['submit'])) {
     if ($pass != $cpass) {
       $message[] = 'confirm password not matched!';
     } else {
+      $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
       $insert_admin = $conn->prepare("INSERT INTO `admins`(name, password) VALUES(?,?)");
-      $insert_admin->execute([$name, $cpass]);
+      $insert_admin->execute([$name, $hashedPassword]);
       $message[] = 'new admin registered successfully!';
     }
   }
