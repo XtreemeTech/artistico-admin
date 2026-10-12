@@ -110,7 +110,8 @@ if (isset($_GET['delete_admin'])) {
                         } else {
                           $phone = $fetch_accounts['phone'];
                           $email = $fetch_accounts['email'];
-                          $action = '<a href="users.php?delete_user=' . $id . '" onclick="return confirm(\'All the user related information will also be deleted. Delete this account?\')" class="delete-btn text-danger">Delete</a>';
+                          $action = '<a href="user_images.php?id=' . $id . '" class="option-btn">Images</a> '
+                            . '<a href="users.php?delete_user=' . $id . '" onclick="return confirm(\'All the user related information will also be deleted. Delete this account?\')" class="delete-btn text-danger">Delete</a>';
                         }
                     ?>
                         <tr>
